@@ -5,6 +5,8 @@ hit it throws the FNAF Foxy jumpscare across every monitor.
 
 ## Run
 
+### Nix
+
 Straight from the repo, no clone needed:
 
     nix run github:jesperls/foxy-qs
@@ -13,6 +15,30 @@ To test without waiting a week, `FOXY_TEST=N` skips the roll and fires a scare
 every N seconds:
 
     FOXY_TEST=10 nix run github:jesperls/foxy-qs
+
+### Other Linux distros
+
+This is just a Quickshell config, so install `quickshell`, point it at a clone,
+and go. Clone once:
+
+    git clone https://github.com/jesperls/foxy-qs
+    cd foxy-qs
+
+Then install Quickshell and its Qt6 QML modules:
+
+- **Arch:** `sudo pacman -S quickshell qt6-declarative qt6-multimedia qt6-imageformats qt6-svg`
+- **Fedora:** `sudo dnf install quickshell qt6-qtdeclarative qt6-qtmultimedia qt6-qtimageformats qt6-qtsvg`
+  (older releases: `sudo dnf copr enable errornointernet/quickshell` first)
+- **Debian/Ubuntu:** Quickshell is not packaged yet; build it from
+  [upstream](https://quickshell.org/docs/guide/install-setup), then
+  `sudo apt install qml6-module-qtmultimedia qt6-image-formats-plugins`
+- **Any distro with Nix:** `nix run .` from the clone; the flake wires up
+  QtMultimedia for you.
+
+Run it from the repo, and the same overrides apply:
+
+    quickshell --path .
+    FOXY_TEST=10 quickshell --path .
 
 ## Install as a flake input
 
