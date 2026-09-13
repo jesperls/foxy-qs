@@ -1,7 +1,13 @@
+
+
 # foxy
 
 A quickshell config that rolls once a second against a 1-in-604800 chance. On a
 hit it throws the FNAF Foxy jumpscare across every monitor.
+
+## Demo
+
+https://github.com/user-attachments/assets/2fcf989d-34f6-486b-89d0-b7257928c736
 
 ## Run
 
